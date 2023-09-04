@@ -972,7 +972,7 @@ BUJS.Animation_.prototype.process_ = function (currTime) {
     this.loadedComponent_ = [];
 
     this.frameCount_ = 0;
-    this.fps_ = 0;
+    this.fps_ = 1;
 
     this.firstAvailNote_ = 0;
     this.lastNoteResult_ = 0;
