@@ -164,7 +164,7 @@ BUJS.Renderer_.prototype.setupConfig_ = function () {
 BUJS.Renderer_.prototype.setupSpriteInfo_ = function () {
     var _this = this;
     _this.sprites_ = {
-        background_: ["bg/Logorong.png"],
+        background_: ["bg/ghostschool.jpg"],
         dnxpLogo_  : ["dnxp.png"],
         laneDown_  : ["lane_7.png", "lane_4.png", "lane_1.png",
                      "lane_9.png", "lane_6.png", "lane_3.png"],
@@ -685,10 +685,10 @@ BUJS.Renderer_.prototype.drawBigNoteResultText_ = function () {
     if (bujs.game_.lastNoteTime_ > 0) {
         var diff = bujs.game_.music_.getCurrTime_() - bujs.game_.lastNoteTime_;
         var noteResult = _this.sprites_.noteResults_[bujs.game_.lastNoteResult_];
-
+        
         // result width / height
         var ratio = 1;
-        if (diff < 50) ratio = 1 + (50 - diff) / 90;
+        if (diff < 50) ratio = 1 + (40 - diff) / 90;
 
         // draw it with ratio
         _this.setSpritePos_(noteResult, (_this.config_.canvasWidth_ - noteResult.width * ratio) / 2, (_this.consts_.baseResultLine_ - noteResult.height * ratio) / 2);
@@ -972,7 +972,7 @@ BUJS.Animation_.prototype.process_ = function (currTime) {
     this.loadedComponent_ = [];
 
     this.frameCount_ = 0;
-    this.fps_ = 1;
+    this.fps_ = 0;
 
     this.firstAvailNote_ = 0;
     this.lastNoteResult_ = 0;
